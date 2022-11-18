@@ -1,3 +1,4 @@
+import arcade
 '''
 FLAG PROJECT
 ---------------
@@ -10,3 +11,28 @@ We will have a competition to see who can make this flag in the least lines of c
 The record is 16! You will have to use some loops to achieve this.
 CHALLENGE: Can you make the entire flag parametrically? This means if I change the hoist to 520px the flag will resize accordingly.
 '''
+
+arcade.open_window(494,260,"The Stars and Stripes")
+arcade.set_background_color(arcade.color.WHITE)
+arcade.start_render()
+for y_offset in range(-30,347,40):
+    arcade.draw_rectangle_filled(247,y_offset,494,20,color=(191,10,48))
+arcade.draw_rectangle_filled(98.8,189.995,197.6,140.01,color=(0,40,104))
+star_y = 229.96
+while star_y > 120:
+    star_x = 12.38
+    while  star_x < 189:
+        arcade.draw_text("*",star_x,star_y,arcade.color.WHITE,20)
+        star_x+=32.76
+    star_y-=14.04
+    star_x = 32.76
+    while star_x < 189:
+        arcade.draw_text("*",star_x,star_y,arcade.color.WHITE,20)
+        star_x+=32.76
+    star_y-=14.04
+star_x = 16.38
+while star_x < 189:
+    arcade.draw_text("*",star_x,star_y,arcade.color.WHITE,20)
+    star_x+=32.76
+arcade.finish_render()
+arcade.run()
